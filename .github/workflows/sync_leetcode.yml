@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Sync
-      uses: amritessh/LeetCodeSolutions@v1.0
+      uses: amritessh/LeetCodeSolutions
       with:
         github-token: ${{ github.token }}
         leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
