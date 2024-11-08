@@ -13,8 +13,7 @@ public:
     ListNode* removeElements(ListNode* head, int val) {
         ListNode* temp = new ListNode(0);
         temp->next = head;
-        
-        
+                
         ListNode* curr = head;
         ListNode* prev = temp;
         ListNode* toDelete = NULL;
