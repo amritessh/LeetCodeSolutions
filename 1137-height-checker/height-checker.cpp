@@ -2,10 +2,10 @@ class Solution {
 public:
     int heightChecker(vector<int>& heights) {
         int count = 0;
-        vector<int> expected ;
+        vector<int> expected = heights ;
         
         
-        copy(heights.begin(), heights.end(), back_inserter(expected));
+        // copy(heights.begin(), heights.end(), back_inserter(expected));
         
         sort(heights.begin(),heights.end());
         
