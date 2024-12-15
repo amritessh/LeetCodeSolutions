@@ -6,7 +6,7 @@ class Solution {
         
         if(i<0 || i>=rows || j<0 || j>=columns || grid[i][j]!='1') return;
         grid[i][j]='2';
-        
+    
         mark_current_islands(grid,i+1,j,rows,columns);
         mark_current_islands(grid,i-1,j,rows,columns);
         mark_current_islands(grid,i,j+1,rows,columns);
