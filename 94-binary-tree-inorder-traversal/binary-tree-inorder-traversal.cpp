@@ -21,7 +21,6 @@ public:
     }
         void inorder(TreeNode* root, vector<int>& res){
 
-        // if(!root) return {};
         if(root){
         inorder(root->left,res);
         res.push_back(root->val);
