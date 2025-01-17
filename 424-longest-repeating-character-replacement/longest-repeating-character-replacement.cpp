@@ -16,8 +16,7 @@ public:
                 left++;
            
             }
-        
-            
+     
         result = max(result,right-left+1);
         }
 
