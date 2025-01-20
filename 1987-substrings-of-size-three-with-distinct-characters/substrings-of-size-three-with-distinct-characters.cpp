@@ -19,10 +19,12 @@ public:
                 mp.erase(s[i]);
                 i++;j++;
             }
-            else{
+            else
+            {
                 mp[s[i]]--;
-                if(mp[s[i]]==0){
+                                if(mp[s[i]]==0){
                     mp.erase(s[i]);
+
                 }
                 i++;
                 j++;
