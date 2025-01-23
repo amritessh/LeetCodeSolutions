@@ -20,5 +20,9 @@ public:
         }
         return false;
 
+        //sorting and binary search
+        // sort(arr.begin(),arr.end());
+
+
     }
 };
