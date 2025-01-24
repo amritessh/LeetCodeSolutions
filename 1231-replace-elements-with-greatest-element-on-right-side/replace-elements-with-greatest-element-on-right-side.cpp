@@ -9,7 +9,6 @@ public:
             mx = max(mx,temp);
         }
         return arr;
-        
 
     }
 };
