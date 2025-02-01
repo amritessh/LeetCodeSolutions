@@ -38,34 +38,34 @@ class QueueUsingStack():
     def __init__(self): 
         # ONLY DATA STRUCTURE YOU CAN USE HERE IS ONLY STACK THAT YOU WROTE
         # print("WRITE CODE")
-        self.st1=Stack()
-        self.st2=Stack()
+        self.stack1=Stack()
+        self.stack2=Stack()
     def push(self, val):
-        self.st1.push(val)
+        self.stack1.push(val)
     
     def pop(self):
-        if self.st2.empty():
-            while not self.st1.empty():
-                self.st2.push(self.st1.pop())
-        if self.st2.empty():
+        if self.stack2.empty():
+            while not self.stack1.empty():
+                self.stack2.push(self.stack1.pop())
+        if self.stack2.empty():
             print("Queue is empty")
             return None  
-        return self.st2.pop()
+        return self.stack2.pop()
     
     def peek(self):
-        if self.st2.empty():
-            while not self.st1.empty():
-                self.st2.push(self.st1.pop())
-        if self.st2.empty():
+        if self.stack2.empty():
+            while not self.stack1.empty():
+                self.stack2.push(self.stack1.pop())
+        if self.stack2.empty():
             print("Queue is empty")
             return None  
-        return self.st2.top()
+        return self.stack2.top()
     
     def empty(self):
-        return self.st1.empty() and self.st2.empty()
+        return self.stack1.empty() and self.stack2.empty()
     
     def __len__(self):
-        return self.st1.__len__() + self.st2.__len__()
+        return self.stack1.__len__() + self.stack2.__len__()
         
 if (True):
     MyQueue = QueueUsingStack
