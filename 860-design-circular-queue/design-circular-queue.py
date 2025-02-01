@@ -1,5 +1,5 @@
-# if (False):
-#      MyCircularQueue = Queue
+if (False):
+     MyCircularQueue = Queue
 
 class Queue():
     def __init__(self,k):
@@ -60,6 +60,7 @@ class Queue():
     
     def __len__(self)->'int':
         return self._size
+        
 class MyCircularQueue(Queue):
     def __init__(self, k: 'int'):
         super().__init__(k)
