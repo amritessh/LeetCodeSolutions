@@ -34,8 +34,7 @@ class Stack():
         return len(self._a)
 
 
-class MyQueue:
-
+class QueueUsingStack():
     def __init__(self): 
         # ONLY DATA STRUCTURE YOU CAN USE HERE IS ONLY STACK THAT YOU WROTE
         # print("WRITE CODE")
@@ -68,7 +67,8 @@ class MyQueue:
     def __len__(self):
         return self.st1.__len__() + self.st2.__len__()
         
-
+if (True):
+    MyQueue = QueueUsingStack
 
 # Your MyQueue object will be instantiated and called as such:
 # obj = MyQueue()
