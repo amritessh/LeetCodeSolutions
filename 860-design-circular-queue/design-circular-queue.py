@@ -1,6 +1,3 @@
-if (False):
-     MyCircularQueue = Queue
-
 class Queue():
     def __init__(self,k):
         # You must use Python List
@@ -60,7 +57,7 @@ class Queue():
     
     def __len__(self)->'int':
         return self._size
-        
+
 class MyCircularQueue(Queue):
     def __init__(self, k: 'int'):
         super().__init__(k)
@@ -83,3 +80,5 @@ class MyCircularQueue(Queue):
     def isFull(self) -> bool:
         return super().isFull()
 
+if (True):
+     MyCircularQueue = Queue
