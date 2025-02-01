@@ -1,5 +1,5 @@
-if (False):
-     MyCircularQueue = Queue
+# if (False):
+#      MyCircularQueue = Queue
 
 class Queue():
     def __init__(self,k):
