@@ -58,27 +58,5 @@ class Queue():
     def __len__(self)->'int':
         return self._size
 
-class MyCircularQueue(Queue):
-    def __init__(self, k: 'int'):
-        super().__init__(k)
-    
-    def enQueue(self, value: int) -> bool:
-        return super().enQueue(value)
-    
-    def deQueue(self) -> bool:
-        return super().deQueue()
-    
-    def Front(self) -> int:
-        return super().Front()
-    
-    def Rear(self) -> int:
-        return super().Rear()
-    
-    def isEmpty(self) -> bool:
-        return super().isEmpty()
-    
-    def isFull(self) -> bool:
-        return super().isFull()
-
 if (True):
      MyCircularQueue = Queue
