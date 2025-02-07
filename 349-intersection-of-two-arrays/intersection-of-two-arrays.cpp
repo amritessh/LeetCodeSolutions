@@ -27,11 +27,15 @@ public:
         // int k = setInter.size();
         vector<int> res;
 
-        // int curr = 0;
-        copy(setInter.begin(), setInter.end(), back_inserter(res));
+        int curr = 0;
+        // copy(setInter.begin(), setInter.end(), back_inserter(res));
         // for(int x = 0; x<setInter.size(); x++){
-        //     res[curr++] = x;
+        //     res.push_back(x);
         // }
+
+        for(int i:setInter){
+            res.push_back(i);
+        }
 
         return res;
 
