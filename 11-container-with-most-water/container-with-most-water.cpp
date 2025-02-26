@@ -21,6 +21,8 @@ public:
             while(height[second]<= h && first < second) second--;
         }
     return res;
-}
-                  
+
+    
+      
+    }
 };
