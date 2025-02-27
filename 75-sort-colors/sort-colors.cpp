@@ -24,13 +24,10 @@ public:
             if(arr[curr] == 0){
                 swap(arr[curr++],arr[p0++]);
             }
-
             else if(arr[curr]==2){
                 swap(arr[curr],arr[p2--]);
             }
             else curr++;
         }
-
-        
     }
 };
