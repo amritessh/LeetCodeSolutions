@@ -30,7 +30,6 @@ public:
         while(ptr1 < N1 && ptr2 < N2){
             if(nums1[ptr1][0] == nums2[ptr2][0]){
                 mergedArray.push_back({nums1[ptr1][0], nums1[ptr1][1] + nums2[ptr2][1]});
-
                 ptr1++;
                 ptr2++;
             }
