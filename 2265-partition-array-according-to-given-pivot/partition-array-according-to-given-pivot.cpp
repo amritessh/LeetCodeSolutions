@@ -24,34 +24,57 @@ public:
         // }
         // return ans;
 
-        int less = 0;
-        int equal = 0;
-        for(int num : nums){
-            if(num<pivot) less++;
-            else if(num == pivot){
-                equal++;
+        // int less = 0;
+        // int equal = 0;
+        // for(int num : nums){
+        //     if(num<pivot) less++;
+        //     else if(num == pivot){
+        //         equal++;
+        //     }
+        // }
+
+        //     vector<int> ans(nums.size());
+        //     int lessI = 0;
+        //     int equalI = less;
+        //     int greaterI = less + equal;
+        //     for(int i = 0 ; i < nums.size(); i++){
+        //     int num = nums[i];
+        //     if (num < pivot) {
+        //         ans[lessI] = num;
+        //         lessI++;
+        //     } else if (num > pivot) {
+        //         ans[greaterI] = num;
+        //         greaterI++;
+        //     } else {
+        //         ans[equalI] = num;
+        //         equalI++;
+            
+        // }
+        // }
+        // return ans;
+        // }
+        vector<int> ans(nums.size());
+        int greaterI = nums.size()-1;
+        int lessI = 0;
+
+        for(int i =0 , j = nums.size()-1; i < nums.size(); i++,j--){
+            if(nums[i]<pivot){
+                ans[lessI] = nums[i];
+                lessI++;
+            }
+
+            if(nums[j]>pivot){
+                ans[greaterI] = nums[j];
+                greaterI--;
             }
         }
-
-            vector<int> ans(nums.size());
-            int lessI = 0;
-            int equalI = less;
-            int greaterI = less + equal;
-            for(int i = 0 ; i < nums.size(); i++){
-            int num = nums[i];
-            if (num < pivot) {
-                ans[lessI] = num;
-                lessI++;
-            } else if (num > pivot) {
-                ans[greaterI] = num;
-                greaterI++;
-            } else {
-                ans[equalI] = num;
-                equalI++;
-            
-        }
+        while(lessI <= greaterI){
+            ans[lessI] = pivot;
+            lessI++;
         }
         return ans;
-        }
-    
+
+
+    }
+
 };
