@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
         // vector<int> ans;
-        int n = grid[0].size();
+        int n = grid.size();
         int missing = -1;
         int repeat = -1;
 
