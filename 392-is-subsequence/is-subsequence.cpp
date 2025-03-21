@@ -6,7 +6,7 @@ public:
         for(int i = 0; i < t.size() ; i++){
             if(t[i] == s[idx]) idx++;
         }
-
+        
         if(idx == s.size()) return true;
         else return false;
     }
