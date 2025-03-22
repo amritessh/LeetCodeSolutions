@@ -12,6 +12,5 @@ public:
             anagrams.push_back(p.second);
         }
         return anagrams;
-    
     }
 };
