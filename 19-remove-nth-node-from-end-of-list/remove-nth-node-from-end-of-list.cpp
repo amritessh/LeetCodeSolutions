@@ -13,6 +13,7 @@ public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
         ListNode* dummy = new ListNode(0, head);
 
+        // ListNode* dummy(0);
         ListNode* slow = dummy;
         ListNode* fast = head;
           
