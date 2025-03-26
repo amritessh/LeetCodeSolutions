@@ -43,12 +43,9 @@ public:
             
             first->next = curr;
             curr->next = tmp1;
-            
-            
+               
             first = tmp1;
             curr = tmp2;
-        }
-        
-        
+        } 
     }
 };
