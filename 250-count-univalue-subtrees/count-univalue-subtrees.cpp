@@ -13,7 +13,6 @@ class Solution {
 public:
 
     int count = 0;
-
     bool dfs(TreeNode* node){
         if(node == nullptr){
             return true;
@@ -26,18 +25,14 @@ public:
             if(node->left !=nullptr && node->left->val !=node->val){
                 return false;
             }
-
             if(node->right !=nullptr && node->right->val != node->val){
                 return false;
             }
-
             count++;
             return true;
         }
-
         return false;
     }
-
 
     int countUnivalSubtrees(TreeNode* root) {
         dfs(root);
