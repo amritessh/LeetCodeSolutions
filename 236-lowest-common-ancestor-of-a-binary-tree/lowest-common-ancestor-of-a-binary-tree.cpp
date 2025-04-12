@@ -18,7 +18,5 @@ public:
         if(right == NULL) return left;
         
         else return root;
-        
-        
     }
 };
