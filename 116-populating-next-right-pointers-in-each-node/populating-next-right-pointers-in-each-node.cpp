@@ -27,23 +27,15 @@ public:
 
         while(curr && next){
             curr->left->next = curr->right;
-
             if(curr->next){
                 curr->right->next = curr->next->left;
             }
-
             curr = curr -> next;
-            
-
             if(!curr){
                 curr = next;
                 next = curr->left;
             }
         }
-
-
         return root;
-
-
     }
 };
