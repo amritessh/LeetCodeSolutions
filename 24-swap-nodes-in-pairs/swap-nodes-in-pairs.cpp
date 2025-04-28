@@ -25,7 +25,6 @@ public:
             prev = curr;
             curr = nxtPair;
         }
-
         return dummy.next;
     }
 };
