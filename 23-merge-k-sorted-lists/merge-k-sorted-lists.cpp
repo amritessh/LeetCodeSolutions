@@ -32,7 +32,6 @@ public:
             point->next = new ListNode(x);
             point = point->next;
         }
-        return head.next;
-        
+        return head.next;  
     }
 };
