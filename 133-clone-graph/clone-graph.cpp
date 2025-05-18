@@ -39,8 +39,6 @@ public:
         }
 
         return cloneNode;
-
-
         
     }
 };
