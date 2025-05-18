@@ -14,10 +14,8 @@ public:
                 stk.pop();
                 answer[prevDay] = currDay - prevDay; // Update waiting days
             }
-            
             stk.push(currDay); // Push current day to stack
         }
-        
         return answer;
     }
 };
