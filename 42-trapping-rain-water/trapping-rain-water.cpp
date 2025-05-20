@@ -2,7 +2,7 @@ class Solution {
 public:
     int trap(vector<int>& A) {
         int n = A.size();
-            int left=0; int right=n-1;
+        int left=0; int right=n-1;
         int res=0;
         int maxleft=0, maxright=0;
         while(left<=right){
