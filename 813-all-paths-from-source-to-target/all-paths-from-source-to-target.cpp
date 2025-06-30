@@ -1,22 +1,27 @@
 class Solution {
 public:
-    vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
-        int target = int(graph.size()) - 1;
-        vector<int> path{0};
-        vector<vector<int>> results;
+    // DFS
+    void dfs(vector<vector<int>>& graph, int node, vector<int>& path,
+             vector<vector<int>>& paths) {
+        path.push_back(node);
+        if (node == graph.size() - 1) {
+            paths.emplace_back(path);
+            return;
+        }
+        vector<int> nextNodes = graph[node];
+        for (int nextNode : nextNodes) {
+            dfs(graph, nextNode, path, paths);
+            path.pop_back();
+        }
+    }
 
-        function<void(int,vector<int>&)> backtrack = [&](int currNode, vector<int>& path){
-                if (currNode == target) {
-                results.push_back(vector(path));
-                return;
-            }
-                for (int nextNode : graph[currNode]) {
-                path.push_back(nextNode);
-                backtrack(nextNode, path);
-                path.pop_back();
-            }
-        };
-        backtrack(0, path);
-        return results;
+    vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
+        vector<vector<int>> paths;
+        if (graph.size() == 0) {
+            return paths;
+        }
+        vector<int> path;
+        dfs(graph, 0, path, paths);
+        return paths;
     }
 };
