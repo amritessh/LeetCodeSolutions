@@ -1,16 +1,25 @@
-class UnionFind{
+class UnionFind {
 private:
-    vector<int> parent;
-    vector<int> rank;
-    int count;
+    vector<int> parent;   // root[i] = root of the tree containing i
+    vector<int> rank;   // rank[i] = height of tree rooted at i
+    int count = 0;      // Number of disjoint sets/components remaining
 
 public:
-    UnionFind(int size){
-        parent.resize(size);
-        rank.resize(size,0);
-        count = size;
-        for(int i = 0 ; i < size; i++){
-            parent[i] = i;
+    /**
+     * CONSTRUCTOR: Initialize n separate disjoint sets
+     * - root[i] = i: each element is its own root initially
+     * - rank[i] = 1: each single node has rank 1 (tree size)
+     * - count = sz: initially we have 'sz' separate components
+     * Time: O(n)
+     */
+
+    UnionFind(int sz) {
+        parent.resize(sz);
+        rank.resize(sz, 0);  // ✅ Initialize to 0 directly, height-based
+        count = sz;
+        
+        for (int i = 0; i < sz; i++) {
+            parent[i] = i;     // Only need to set root
         }
     }
 
@@ -19,17 +28,25 @@ public:
         return parent[x];
     }
 
-    void union_set(int x,int y){
-        int xset = find(x), yset = find(y);
-        if(rank[xset]<rank[yset]){
-            parent[xset] = yset;
-        } else if(rank[xset]>rank[yset]){
-            parent[yset]=xset;
-        }else{
-            parent[yset]=xset;
-            rank[xset]++;
+    void union_set(int x, int y) {
+        int rootX = find(x);
+        int rootY = find(y);
+        
+        // Already in same set - no union needed
+        if (rootX != rootY) {
+            // Union by rank: attach smaller tree to larger tree
+            if (rank[rootX] > rank[rootY]) {
+                parent[rootY] = rootX;        // Make rootX the parent of rootY
+            } else if (rank[rootX] < rank[rootY]) {
+                parent[rootX] = rootY;        // Make rootY the parent of rootX
+            } else {
+                // Same rank: arbitrarily choose one as parent, increment its rank
+                parent[rootY] = rootX;
+                rank[rootX] += 1;           // New root's rank increases by 1
+            }
+            // Two sets merged into one → decrease component count
+            count--;
         }
-        count--;
     }
 };
 
