@@ -8,7 +8,6 @@ public:
     /**
      * CONSTRUCTOR: Initialize n separate disjoint sets
      * - root[i] = i: each element is its own root initially
-     * - rank[i] = 1: each single node has rank 1 (tree size)
      * - count = sz: initially we have 'sz' separate components
      * Time: O(n)
      */
@@ -48,6 +47,11 @@ public:
             count--;
         }
     }
+
+    int getCount() {
+        return count;
+    }
+
 };
 
 
@@ -61,11 +65,11 @@ public:
         for(int i = 0; i <n; i++){
             for(int j = i+1; j<n; j++){
                 if(isConnected[i][j] && dsu.find(i)!=dsu.find(j)){
-                    numberOfComponents--;
+                    // numberOfComponents--;
                     dsu.union_set(i,j);
                 }
             }
         }
-        return numberOfComponents;
+        return dsu.getCount();
     }
 };
