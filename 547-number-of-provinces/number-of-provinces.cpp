@@ -1,6 +1,7 @@
 class UnionFind{
 private:
-    vector<int> parent, rank;
+    vector<int> parent;
+    vector<int> rank;
     int count;
 
 public:
@@ -28,6 +29,7 @@ public:
             parent[yset]=xset;
             rank[xset]++;
         }
+        count--;
     }
 };
 
