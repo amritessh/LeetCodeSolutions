@@ -2,7 +2,6 @@ class UnionFind{
 private:   
     vector<int> parent, rank;
 
-
 public:
 UnionFind(int size){
     parent.resize(size);
@@ -36,7 +35,6 @@ UnionFind(int size){
 
 };
 
-
 class Solution {
 public:
     int earliestAcq(vector<vector<int>>& logs, int n) {
@@ -50,14 +48,9 @@ public:
                 connectedComponents--;
                 dsu.union_set(u,v);
             }
-
-
-        
-
+    
         if(connectedComponents == 1) return t;
         }
         return -1;
-
-
     }
 };
