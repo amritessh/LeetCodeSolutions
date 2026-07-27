@@ -11,8 +11,7 @@ public:
                 
             }else if( number > second ){
                 second = number;
-            }
-            
+            }           
         }
         
         return ( first - 1 ) * ( second - 1 );
